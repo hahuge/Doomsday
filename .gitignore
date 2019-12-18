@@ -1,0 +1,12 @@
+# 过滤文件（项目配置）
+*.iml
+.classpath
+.project
+
+# 过滤文件夹
+.idea/
+.git/
+*/target/
+.settings/
+.out/
+

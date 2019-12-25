@@ -9,13 +9,12 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "")
+@Table(name = "tb_product")
 public class Product {
     @Id
     private Long id;
     private String productName;
     private Integer status;
-    private BigDecimal productDesc;
-    private String caption;
-    private Integer inventory;
+    private BigDecimal price;
+    private String productDesc;
 }

@@ -5,8 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 
-public interface productDao extends JpaRepository<Product, Long>, JpaSpecificationExecutor {
+public interface ProductDao extends JpaRepository<Product, Long>, JpaSpecificationExecutor<Product> {
 
-    @Query("select a from AccountInfo a where a.accountId = ?1")
-    Product findByAccountId(Long id);
 }

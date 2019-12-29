@@ -1,7 +1,6 @@
 package forever.service;
 
 import forever.entity.Product;
-import org.springframework.stereotype.Service;
 
 public interface ProductService {
 

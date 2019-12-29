@@ -2,11 +2,8 @@ package forever.controller;
 
 import forever.entity.Product;
 import forever.service.ProductService;
-import forever.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.lang.reflect.Method;
 
 @RestController
 @RequestMapping("/product")

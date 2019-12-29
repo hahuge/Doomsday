@@ -1,0 +1,14 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: order_service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://101.201.65.162:3306/test?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: Hahug66
+  jpa:
+    database: MySQL
+    show-sql: true
+    open-in-view: true

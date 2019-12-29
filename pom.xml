@@ -9,7 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-Doomsday</version>
     <modules>
-        <module>test</module>
+        <module>order_test</module>
+        <module>eureka_test</module>
+        <module>product_test</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

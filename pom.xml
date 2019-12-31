@@ -12,6 +12,7 @@
         <module>order_test</module>
         <module>eureka_test</module>
         <module>product_test</module>
+        <module>annotation_test</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -6,6 +6,9 @@ public class UserConfiguration {
 
     @Bean
     public User getUser(){
-        return new User();
+        User user = new User();
+        user.setUserName("Hello");
+        user.setAge(20);
+        return user;
     }
 }

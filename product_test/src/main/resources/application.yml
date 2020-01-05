@@ -1,8 +1,8 @@
 server:
-  port: 9001
+  port: 9011
 spring:
   application:
-    name: product_service
+    name: product
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://101.201.65.162:3306/test?useUnicode=true&characterEncoding=UTF-8

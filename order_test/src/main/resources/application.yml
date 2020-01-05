@@ -2,7 +2,7 @@ server:
   port: 9002
 spring:
   application:
-    name: order_service
+    name: order
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://101.201.65.162:3306/test?useUnicode=true&characterEncoding=UTF-8
@@ -16,8 +16,22 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    lease-renewal-interval-in-seconds: 5 #发送心跳的间隔
+    lease-renewal-interval-in-seconds: 60 #发送心跳的间隔
     lease-expiration-duration-in-seconds: 10 #续约到期的时间
   client:
     service-url:
       defaultZone: http://127.0.0.1:9000/eureka
+
+logging:
+  level:
+    root: debug
+
+#修改ribbon负载均衡策略 服务名 - ribbon - NFLoadBalancerRuleClassName: 策略
+product:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule  #轮循策略
+    MaxAutoRetries: 1 #最大重试次数，当Eureka中可以找到服务，但是服务连不上时将会重试
+    MaxAutoRetriesNextServer: 1 #切换实例的重试次数
+    OkToRetryOnAllOperations: true # 对所有的操作请求都进行重试，如果是get则可以，如果是post,put等操作没有实现幂等的情况下是很危险的
+    ConnectTimeout: 250 #请求连接的超时时间
+    ReadTimeout: 1000 #请求处理的超时时间

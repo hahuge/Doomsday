@@ -20,15 +20,15 @@ public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping(value = "/mode/test", method = RequestMethod.GET)
-    public Object getModeTest(){
-        return restTemplate.getForObject("http://127.0.0.1:9001/product/1", Object.class);
-    }
-
     @RequestMapping(value = "/mode/eureka", method = RequestMethod.GET)
     public Object getModeEureka(){
         List<ServiceInstance> instances = discoveryClient.getInstances("product_service");
         ServiceInstance instance = instances.get(0);
         return restTemplate.getForObject("http://"+instance.getHost()+":"+instance.getPort()+"/product/1", Object.class);
+    }
+
+    @RequestMapping(value = "/mode/ribbon", method = RequestMethod.GET)
+    public Object getModeRibbon(){
+        return restTemplate.getForObject("http://product/product/1", Object.class);
     }
 }
